@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
+import { LiveTicker } from "@/components/live-ticker";
 import { ProjectCard } from "@/components/project-card";
 
 const labNotes = [
@@ -33,6 +34,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen gradient-bg noise-bg">
       <div className="relative z-10">
+        <LiveTicker />
         <Hero />
 
         <section
@@ -50,12 +52,12 @@ export default function Home() {
               badgeVariant="live"
               icon="video"
               pricing="$29/mo"
-              launchUrl="https://swingstr.com"
+              launchUrl="https://swingstr.vercel.app"
               featured
             />
             <ProjectCard
-              title="Zombie Sub Slayer"
-              description="Financial hygiene tool to detect and kill unwanted recurring subscriptions."
+              title="UTGC Strokes Gained Tracker"
+              description="Track your strokes gained stats and improve your game."
               badge="Beta"
               badgeVariant="beta"
               icon="dollar"
