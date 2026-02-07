@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Bitcoin, TrendingDown, TrendingUp } from "lucide-react";
+import { Logo } from "./logo";
 
 interface BitcoinData {
   usd: number;
@@ -131,6 +132,8 @@ export function LiveTicker() {
     <div className="sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <div className="flex items-center gap-6">
+          <Logo />
+          <div className="hidden h-6 w-px bg-slate-700 sm:block" />
           <div className="flex items-center gap-3">
             <Bitcoin className="h-5 w-5 shrink-0 text-emerald-400" />
             <div>

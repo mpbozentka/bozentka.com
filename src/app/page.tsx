@@ -56,13 +56,13 @@ export default function Home() {
               featured
             />
             <ProjectCard
-              title="UTGC Strokes Gained Tracker"
+              title="Longhorn Ledger"
               description="Track your strokes gained stats and improve your game."
               badge="Beta"
               badgeVariant="beta"
               icon="dollar"
               pricing="Free"
-              launchUrl="https://zombiesublayer.com"
+              launchUrl="longhorn-ledger-six.vercel.app"
             />
             <ProjectCard
               title="Bitcoin Sandbox"
