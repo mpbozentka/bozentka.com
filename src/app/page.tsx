@@ -62,7 +62,7 @@ export default function Home() {
               badgeVariant="beta"
               icon="dollar"
               pricing="Free"
-              launchUrl="longhorn-ledger-six.vercel.app"
+              launchUrl="https://longhorn-ledger-six.vercel.app"
             />
             <ProjectCard
               title="Bitcoin Sandbox"
