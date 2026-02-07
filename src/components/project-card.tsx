@@ -18,7 +18,7 @@ interface ProjectCardProps {
   badge: string;
   badgeVariant: BadgeVariant;
   icon: ProjectIcon;
-  pricing: string;
+  pricing?: string | null;
   launchUrl?: string | null;
   featured?: boolean;
 }
@@ -35,7 +35,7 @@ export function ProjectCard({
   badge,
   badgeVariant,
   icon,
-  pricing,
+  pricing = null,
   launchUrl,
   featured = false,
 }: ProjectCardProps) {
@@ -61,9 +61,11 @@ export function ProjectCard({
             >
               {badge}
             </span>
-            <span className="rounded-full border border-slate-600/50 bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300">
-              {pricing}
-            </span>
+            {pricing != null && pricing !== "" && (
+              <span className="rounded-full border border-slate-600/50 bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300">
+                {pricing}
+              </span>
+            )}
           </div>
         </div>
 

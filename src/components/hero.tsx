@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BookLessonButton } from "./book-lesson-button";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -34,6 +35,9 @@ export function Hero() {
         >
           View Projects
         </motion.button>
+        <div className="mt-4">
+          <BookLessonButton />
+        </div>
       </motion.div>
     </section>
   );
