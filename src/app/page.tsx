@@ -71,7 +71,7 @@ export default function HomePage() {
                   Mitchell Bozentka
                 </h1>
                 <p className="text-base md:text-xl font-light tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-10">
-                  PGA Professional & Independent Developer
+                  PGA Golf Professional & Independent Developer
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
                   <Link
@@ -278,7 +278,7 @@ export default function HomePage() {
                   Mitchell Bozentka
                 </h2>
                 <p className="text-slate-500 dark:text-slate-400 text-sm">
-                  PGA Professional & Independent Developer
+                  PGA Golf Professional & Independent Developer
                 </p>
               </div>
               <div className="flex gap-8">

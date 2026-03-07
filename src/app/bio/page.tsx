@@ -13,7 +13,7 @@ export default function BioPage() {
         <h1 className="font-serif text-4xl italic mb-6">Full Bio</h1>
         <div className="text-zinc-400 space-y-4">
           <p>
-            PGA Professional & Independent Developer. Empowering independent minds
+            PGA Golf Professional & Independent Developer. Empowering independent minds
             through Personal Agency and custom software solutions.
           </p>
           <p>Add your full bio content here.</p>
