@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mitchell Bozentka | Portfolio",
+  title: "Mitchell Bozentka | PGA Professional & Sovereign Steward",
   description:
     "PGA Professional & Sovereign Steward. Empowering independent minds through Personal Agency and custom software solutions.",
 };

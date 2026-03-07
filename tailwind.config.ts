@@ -20,8 +20,10 @@ const config: Config = {
         terracotta: "#D97757",
         "warm-alabaster": "#FAF9F5",
         bitcoin: "#F7931A",
-        "background-light": "#FAF9F5",
-        "background-dark": "#141413",
+        "accent-blue": "#007AFF",
+        ink: "#1a1a1a",
+        "background-light": "#f7f7f7",
+        "background-dark": "#191919",
       },
       fontFamily: {
         sans: ["var(--font-display)", "Inter", "system-ui", "sans-serif"],

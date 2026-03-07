@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandKit } from "@/components/brand-kit";
+import BrandKit from "@/components/brand-kit";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = {
