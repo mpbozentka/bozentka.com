@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ChevronDown,
-  ExternalLink,
-  Sparkles,
-  Target,
-  Code,
-} from "lucide-react";
+import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -29,9 +22,6 @@ export default function HomePage() {
             <nav className="hidden md:flex items-center gap-8">
               <a className="text-sm font-semibold hover:text-primary transition-colors" href="#projects">
                 Projects
-              </a>
-              <a className="text-sm font-semibold hover:text-primary transition-colors" href="#updates">
-                Updates
               </a>
               <a className="text-sm font-semibold hover:text-primary transition-colors" href="#about">
                 About
@@ -140,7 +130,7 @@ export default function HomePage() {
                     src={siteConfig.swingstr.imageUrl}
                     alt="Golf swing analysis software interface"
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-contain"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
@@ -185,88 +175,64 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Feed / Updates Section */}
-          <section className="py-32 px-6 bg-slate-100 dark:bg-slate-900/50 rounded-2xl border border-primary/10" id="updates">
-            <div>
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
-                <h4 className="text-4xl font-bold text-slate-900 dark:text-slate-100">Latest Updates</h4>
-                <p className="text-slate-600 dark:text-slate-400 max-w-md">
-                  Short-form thoughts on golf technology, personal sovereignty, and
-                  the future of professional sports.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8">
-                <article className="bg-white dark:bg-white/5 p-8 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors group">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                      June 12, 2024
-                    </span>
-                    <Sparkles className="size-5 text-slate-400 group-hover:text-primary transition-colors" />
-                  </div>
-                  <h6 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-                    The Independent Developer Mindset
-                  </h6>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    Building personal infrastructure that allows for true
-                    independence in a rapidly shifting professional landscape.
-                  </p>
-                  <Link
-                    href={siteConfig.nostr.globalFeedHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-slate-100 hover:text-primary transition-colors"
+          {/* Select Projects */}
+          <section className="py-20" id="select-projects">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-slate-900 dark:text-slate-100">
+                Select Projects
+              </h2>
+              <Link
+                href={siteConfig.githubReposHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:text-primary transition-colors w-fit"
+              >
+                GitHub Repositories
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {siteConfig.projects.map((project) => {
+                const screenshotUrl =
+                  "screenshotUrl" in project ? project.screenshotUrl : "";
+                return (
+                  <article
+                    key={project.id}
+                    className="group rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 hover:border-primary/30 transition-colors flex flex-col md:flex-row"
                   >
-                    Read thread
-                    <ExternalLink className="size-4" />
-                  </Link>
-                </article>
-
-                <article className="bg-white dark:bg-white/5 p-8 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors group">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                      May 28, 2024
-                    </span>
-                    <Target className="size-5 text-slate-400 group-hover:text-primary transition-colors" />
-                  </div>
-                  <h6 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">Swing Data vs. Feel</h6>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    Why the future of PGA coaching isn&apos;t just more data, but
-                    better interpretation and contextualization for the player.
-                  </p>
-                  <Link
-                    href={siteConfig.nostr.globalFeedHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-slate-100 hover:text-primary transition-colors"
-                  >
-                    Read more
-                    <ExternalLink className="size-4" />
-                  </Link>
-                </article>
-
-                <article className="bg-white dark:bg-white/5 p-8 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors group">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                      May 15, 2024
-                    </span>
-                    <Code className="size-5 text-slate-400 group-hover:text-primary transition-colors" />
-                  </div>
-                  <h6 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">Building Swingstr v3.0</h6>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    A deep dive into the computer vision stack we&apos;re
-                    utilizing to track club path metrics in real-time.
-                  </p>
-                  <Link
-                    href={siteConfig.swingstr.launchHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-slate-100 hover:text-primary transition-colors"
-                  >
-                    Follow dev log
-                    <ExternalLink className="size-4" />
-                  </Link>
-                </article>
-              </div>
+                    <div className="relative w-full md:w-2/5 aspect-video md:aspect-square bg-slate-200 dark:bg-slate-800 overflow-hidden shrink-0">
+                      {screenshotUrl ? (
+                        <Image
+                          src={screenshotUrl}
+                          alt={`${project.name} screenshot`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                          unoptimized={screenshotUrl.startsWith("http")}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-slate-300 dark:bg-slate-700" />
+                      )}
+                    </div>
+                    <div className="p-6 flex flex-col flex-1 justify-center">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+                        {project.name}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                        {project.description}
+                      </p>
+                      <Link
+                        href={project.launchHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-slate-800 dark:bg-slate-700 text-white px-5 py-3 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-primary transition-colors w-fit"
+                      >
+                        Launch
+                        <ExternalLink className="size-4" />
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </section>
 

@@ -26,6 +26,7 @@ export const siteConfig = {
     imageUrl: "/swingstr.png",
   },
   vercelProjectsHref: "https://vercel.com/mitch-bozentkas-projects",
+  githubReposHref: "https://github.com",
   projects: [
     {
       id: "longhorn-ledger",
