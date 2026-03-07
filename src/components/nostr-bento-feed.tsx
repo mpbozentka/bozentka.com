@@ -92,17 +92,17 @@ export function NostrBentoFeed() {
     };
   }, []);
 
-  const displayNotes = notes.slice(0, 15);
+  const displayNotes = notes.slice(0, 25);
   const displayName = profile?.name || "Anonymous";
   const displayNip05 = profile?.nip05 || (npub ? `${npub.slice(0, 12)}...` : null);
 
   return (
-    <div className="bento-card rounded-xl p-8 flex flex-col h-[560px]">
+    <div className="bento-card rounded-xl p-8 flex flex-col h-[560px] w-full min-w-0">
       <div className="flex justify-between items-center mb-4">
-        <span className="text-zinc-500 text-[10px] font-mono uppercase tracking-[0.2em]">
+        <span className="text-foreground/70 text-[10px] font-mono uppercase tracking-[0.2em]">
           Nostr Feed
         </span>
-        <Activity className="text-sm text-zinc-500" size={18} />
+        <Activity className="text-sm text-foreground/70" size={18} />
       </div>
 
       <div className="flex-1 overflow-y-auto nostr-scroll space-y-4 pr-2">
@@ -115,9 +115,9 @@ export function NostrBentoFeed() {
             </div>
           </div>
         ) : error ? (
-          <p className="text-zinc-500 text-xs py-4">{error}</p>
+          <p className="text-foreground/70 text-xs py-4">{error}</p>
         ) : displayNotes.length === 0 ? (
-          <p className="text-zinc-500 text-xs py-4">No notes yet.</p>
+          <p className="text-foreground/70 text-xs py-4">No notes yet.</p>
         ) : (
           displayNotes.map((note) => {
             const imageUrls = extractImageUrls(note.content);
@@ -130,11 +130,11 @@ export function NostrBentoFeed() {
                   href={`https://njump.me/${noteId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/80 transition-colors overflow-hidden"
+                  className="block rounded-xl bg-stone/20 border border-stone/40 hover:border-stone/60 transition-colors overflow-hidden"
                 >
                   <div className="p-4">
                     <div className="flex items-start gap-3">
-                      <div className="shrink-0 size-10 rounded-full ring-2 ring-primary/40 overflow-hidden bg-zinc-800">
+                      <div className="shrink-0 size-10 rounded-full ring-2 ring-primary/40 overflow-hidden bg-stone/30">
                         {profile?.picture ? (
                           <Image
                             src={profile.picture}
@@ -145,26 +145,26 @@ export function NostrBentoFeed() {
                             unoptimized
                           />
                         ) : (
-                          <div className="size-full bg-zinc-700" />
+                          <div className="size-full bg-stone/40" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-bold text-white text-sm">
+                          <span className="font-bold text-foreground text-sm">
                             {displayName}
                           </span>
                           {displayNip05 && (
-                            <span className="text-zinc-500 text-xs">
+                            <span className="text-foreground/70 text-xs">
                               {displayNip05}
                             </span>
                           )}
-                          <span className="text-zinc-600 text-xs">·</span>
-                          <span className="text-zinc-600 text-xs">
+                          <span className="text-stone text-xs">·</span>
+                          <span className="text-stone text-xs">
                             {formatRelativeTime(note.created_at)}
                           </span>
                         </div>
                         {textContent ? (
-                          <p className="text-sm text-zinc-100 leading-relaxed mt-1 whitespace-pre-wrap break-words">
+                          <p className="text-sm text-foreground leading-relaxed mt-1 whitespace-pre-wrap break-words">
                             {textContent}
                           </p>
                         ) : null}
@@ -189,7 +189,7 @@ export function NostrBentoFeed() {
                           e.preventDefault();
                           e.stopPropagation();
                         }}
-                        className="shrink-0 p-1 rounded hover:bg-zinc-800 text-zinc-500 hover:text-zinc-300 transition-colors"
+                        className="shrink-0 p-1 rounded hover:bg-stone/30 text-stone hover:text-foreground transition-colors"
                         aria-label="More options"
                       >
                         <MoreHorizontal size={16} />
@@ -204,11 +204,11 @@ export function NostrBentoFeed() {
               return (
                 <div
                   key={note.id}
-                  className="block rounded-xl bg-zinc-900/50 border border-zinc-800/50 overflow-hidden"
+                  className="block rounded-xl bg-zinc-100 border border-stone/40 overflow-hidden"
                 >
                   <div className="p-4">
                     <div className="flex items-start gap-3">
-                      <div className="shrink-0 size-10 rounded-full ring-2 ring-zinc-600 overflow-hidden bg-zinc-800">
+                      <div className="shrink-0 size-10 rounded-full ring-2 ring-stone overflow-hidden bg-stone/30">
                         {profile?.picture ? (
                           <Image
                             src={profile.picture}
@@ -219,26 +219,26 @@ export function NostrBentoFeed() {
                             unoptimized
                           />
                         ) : (
-                          <div className="size-full bg-zinc-700" />
+                          <div className="size-full bg-stone/40" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-bold text-white text-sm">
+                          <span className="font-bold text-foreground text-sm">
                             {displayName}
                           </span>
                           {displayNip05 && (
-                            <span className="text-zinc-500 text-xs">
+                            <span className="text-foreground/70 text-xs">
                               {displayNip05}
                             </span>
                           )}
-                          <span className="text-zinc-600 text-xs">·</span>
-                          <span className="text-zinc-600 text-xs">
+                          <span className="text-stone text-xs">·</span>
+                          <span className="text-stone text-xs">
                             {formatRelativeTime(note.created_at)}
                           </span>
                         </div>
                         {textContent ? (
-                          <p className="text-sm text-zinc-100 leading-relaxed mt-1 whitespace-pre-wrap break-words">
+                          <p className="text-sm text-foreground leading-relaxed mt-1 whitespace-pre-wrap break-words">
                             {textContent}
                           </p>
                         ) : null}
@@ -259,7 +259,7 @@ export function NostrBentoFeed() {
                         )}
                       </div>
                       <button
-                        className="shrink-0 p-1 rounded hover:bg-zinc-800 text-zinc-500"
+                        className="shrink-0 p-1 rounded hover:bg-foreground/10 text-foreground/70"
                         aria-label="More options"
                       >
                         <MoreHorizontal size={16} />
@@ -273,9 +273,10 @@ export function NostrBentoFeed() {
         )}
       </div>
 
-      <div className="mt-4 pt-4 border-t border-zinc-800/50">
+      <div className="mt-4 pt-4 border-t border-stone/50">
         <a
-          className="flex items-center justify-between text-[10px] font-mono text-primary uppercase tracking-widest hover:opacity-70 transition-opacity"
+          className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest hover:opacity-70 transition-opacity"
+        style={{ color: "#D97757" }}
           href={siteConfig.nostr.globalFeedHref}
           target="_blank"
           rel="noopener noreferrer"

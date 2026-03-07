@@ -139,14 +139,14 @@ export function BitcoinChartCard() {
       : [];
 
   return (
-    <div className="md:col-span-5 bento-card rounded-xl p-8 flex flex-col">
+    <div className="md:col-span-5 self-start bento-card rounded-xl p-8 flex flex-col min-w-[280px] w-full aspect-[2/1] min-h-[260px] max-h-[400px]">
       <div className="flex justify-between items-center mb-6">
-        <span className="text-zinc-500 text-[10px] font-mono uppercase tracking-[0.2em]">
+        <span className="text-foreground/70 text-[10px] font-mono uppercase tracking-[0.2em]">
           BTC / USD • 12M
         </span>
         <div className="flex items-center gap-2">
           <div className="size-2 rounded-full bg-primary" />
-          <span className="text-white text-[10px] font-mono uppercase tracking-widest">
+          <span className="text-foreground text-[10px] font-mono uppercase tracking-widest">
             Live
           </span>
         </div>
@@ -161,13 +161,13 @@ export function BitcoinChartCard() {
           </div>
         </div>
       ) : error ? (
-        <div className="flex-1 flex items-center justify-center min-h-[160px] text-zinc-500 text-xs">
+        <div className="flex-1 flex items-center justify-center min-h-[160px] text-foreground/70 text-xs">
           {error}
         </div>
       ) : (
         <>
           <div className="flex-1 flex flex-col justify-end min-h-[140px]">
-            <div className="mb-1 h-4 font-mono text-[10px] text-zinc-400">
+            <div className="mb-1 h-4 font-mono text-[10px] text-stone">
               {hoveredCandle != null
                 ? `Close ${formatPrice(hoveredCandle.close)}`
                 : "\u00A0"}
@@ -212,7 +212,7 @@ export function BitcoinChartCard() {
                 );
               })}
             </div>
-            <div className="h-4 flex relative font-mono text-[9px] text-zinc-600 uppercase">
+            <div className="h-4 flex relative font-mono text-[9px] text-stone uppercase">
               {quarterlyLabels.map(({ index, label }) => (
                 <span
                   key={index}
@@ -228,31 +228,31 @@ export function BitcoinChartCard() {
             </div>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-zinc-800/50 flex justify-between items-end">
+          <div className="mt-6 pt-6 border-t border-stone/50 flex justify-between items-end">
             <div>
-              <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">
+              <p className="text-[10px] font-mono text-foreground/70 uppercase tracking-widest mb-1">
                 Price
               </p>
-              <p className="text-xl font-mono tabular-nums text-white">
+              <p className="text-xl font-mono tabular-nums text-foreground">
                 {currentPrice != null ? formatPrice(currentPrice) : "—"}
               </p>
             </div>
             {high != null && (
               <div className="text-right">
-                <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">
+                <p className="text-[10px] font-mono text-foreground/70 uppercase tracking-widest mb-1">
                   High (12M)
                 </p>
-                <p className="text-sm font-mono text-zinc-400 tabular-nums">
+                <p className="text-sm font-mono text-stone tabular-nums">
                   {formatPrice(high)}
                 </p>
               </div>
             )}
             {volume != null && (
               <div className="text-right">
-                <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">
+                <p className="text-[10px] font-mono text-foreground/70 uppercase tracking-widest mb-1">
                   Est. Vol
                 </p>
-                <p className="text-sm font-mono text-zinc-400 tabular-nums">
+                <p className="text-sm font-mono text-stone tabular-nums">
                   {formatVol(volume)}
                 </p>
               </div>

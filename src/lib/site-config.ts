@@ -4,12 +4,15 @@
 
 export const siteConfig = {
   nav: [
-    { label: "Manifesto", href: "/manifesto" },
-    { label: "Ecosystem", href: "/ecosystem" },
-    { label: "Sovereignty", href: "/sovereignty" },
+    { label: "Home", href: "/" },
+    { label: "Brand", href: "/branding" },
   ],
+  scheduleHref: "/schedule",
+  scheduleEmbedSrc:
+    "https://calendar.google.com/calendar/appointments/AcZssZ1wrWc2kovHxpzVnEe48c354w0BnjPfXdJBbL4=?gv=true",
+  scheduleExternalHref: "https://calendar.app.google/SLPFWi8bM1uaCVR86",
   deployCta: {
-    label: "Deploy",
+    label: "Contact",
     href: "mailto:mboz7@proton.me",
   },
   bio: {
@@ -20,9 +23,9 @@ export const siteConfig = {
     description:
       "Full-Stack golf swing analysis software allowing Coaches to find, fix, and file golfer progressions.",
     launchHref: "https://swingstr.vercel.app",
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBFRSi8h87II-hwsTRl_gttt1tDtuto1QkWvwkv6dCPFtND4EWDlgMTY_VO0ny9KjpIp3G_mlUMm2WUMQQn7NGUw4ClxHZzDm-u_qK13RK-_gIsk3NJLKnjM7vImtheuv7efyEOd1d-8UWsh0SkRuVFaGYQW_UUHDhBDUCL3VfF-XU8yi1E3ziOiuppN8lEYV3O7F2U5qP1vpNZwX_FMuOoED4tZuia8iSpGV7g8lwwwUSgRlYf1HT7-MzFnvwjoHT-mjuwq3EYIIg",
+    imageUrl: "/swingstr.png",
   },
+  vercelProjectsHref: "https://vercel.com/mitch-bozentkas-projects",
   projects: [
     {
       id: "longhorn-ledger",
@@ -31,6 +34,7 @@ export const siteConfig = {
         "In-round Strokes Gained calculator and performance tracker for The University of Texas Golf Club.",
       icon: "book",
       launchHref: "https://longhorn-ledger-six.vercel.app",
+      screenshotUrl: "/screenshots/longhorn-ledger.png",
     },
     {
       id: "mempool-radio",
@@ -39,15 +43,16 @@ export const siteConfig = {
         "Tune in to the rhythm of the chain—a sonified, real-time visualizer where you can hear the heartbeat of Bitcoin.",
       icon: "music",
       launchHref: "https://mempool-radio.vercel.app",
+      screenshotUrl: "/screenshots/mempool-radio.png",
     },
     {
-      id: "shopify-sats-back",
-      name: "Shopify Sats-Back Plugin",
+      id: "stock-swiper",
+      name: "Stock Swiper",
       description:
-        "Coming Soon!",
-      icon: "shield",
-      launchHref: "#",
-      comingSoon: true,
+        "A Tinder-like stock screener—swipe on stocks to find your next alpha.",
+      icon: "trending",
+      launchHref: "https://stock-swiper.vercel.app/",
+      screenshotUrl: "/screenshots/stock-swiper.png",
     },
   ],
   nostr: {

@@ -57,7 +57,7 @@ export async function GET() {
     const notesUrl = new URL("https://api.nostr.wine/search");
     notesUrl.searchParams.set("pubkey", hexPubkey);
     notesUrl.searchParams.set("kind", "1");
-    notesUrl.searchParams.set("limit", "30");
+    notesUrl.searchParams.set("limit", "50");
     notesUrl.searchParams.set("sort", "time");
     notesUrl.searchParams.set("order", "descending");
 
