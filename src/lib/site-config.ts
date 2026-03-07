@@ -36,19 +36,18 @@ export const siteConfig = {
       id: "mempool-radio",
       name: "Mempool.radio",
       description:
-        "Tune in to the rhythm of the chain—a sonified, real-time visualizer where you can hear the heartbeat of Bitcoin.",
+        "A live sonification of the mempool: steel drums drive the beat of every broadcasted transaction, and the tone rises and falls with the amount of BTC moving on-chain.",
       icon: "music",
       launchHref: "https://mempool-radio.vercel.app",
       screenshotUrl: "/screenshots/mempool-radio.png",
     },
     {
-      id: "stock-swiper",
-      name: "Stock Swiper",
-      description:
-        "A Tinder-like stock screener—swipe on stocks to find your next alpha.",
+      id: "unspent",
+      name: "Unspent",
+      description: "Track and visualize your Bitcoin UTXOs.",
       icon: "trending",
-      launchHref: "https://stock-swiper.vercel.app/",
-      screenshotUrl: "/screenshots/stock-swiper.png",
+      launchHref: "https://unspent-eta.vercel.app",
+      screenshotUrl: "/screenshots/unspent.png",
     },
   ],
   nostr: {
