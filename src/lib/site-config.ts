@@ -3,10 +3,6 @@
  */
 
 export const siteConfig = {
-  nav: [
-    { label: "Home", href: "/" },
-    { label: "Brand", href: "/branding" },
-  ],
   scheduleHref: "/schedule",
   scheduleEmbedSrc: "https://calendar.app.google/81nEEYD2Nbj17b369",
   scheduleExternalHref: "https://calendar.app.google/81nEEYD2Nbj17b369",

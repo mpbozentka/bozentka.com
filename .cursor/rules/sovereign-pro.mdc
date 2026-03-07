@@ -1,0 +1,13 @@
+---
+globs: [src/app/blog/**, content/posts/**]
+---
+
+# Sovereign Pro Architecture Rules
+
+- **Next.js Pattern:** Strictly follow Next.js App Router conventions (layouts, segments, loading, error).
+- **Styling:** Use Tailwind CSS. For articles, use the `@tailwindcss/typography` 'prose' class with a focus on high-contrast serif headings for an editorial feel.
+- **Components:**
+    - Primary Buttons: Use Brand Orange (#F26522) with `rounded-lg` or `rounded-xl`.
+    - Typography: Maintain the high-contrast editorial hierarchy: Serif headings (#0F172A), Sans-serif UI labels.
+- **SEO & Metadata:** Always implement `generateMetadata` for dynamic and static pages to ensure robust SEO.
+- **Assets:** Blog thumbnails must be 1200x630px and follow the Brand Orange and Navy color palette.
