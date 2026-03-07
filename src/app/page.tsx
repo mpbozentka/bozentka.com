@@ -2,42 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { SiteHeader } from "@/components/site-header";
 
 export default function HomePage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden noise-bg bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
       <div className="layout-container flex h-full grow flex-col relative z-10">
-        {/* Header */}
-        <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-          <div className="mx-auto max-w-[1200px] px-6 py-4 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
-                <span className="material-symbols-outlined text-xl">wb_twilight</span>
-              </div>
-              <h1 className="text-xl font-extrabold tracking-tight text-primary">
-                Mitchell Bozentka
-              </h1>
-            </Link>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-sm font-semibold hover:text-primary transition-colors" href="#projects">
-                Projects
-              </a>
-              <a className="text-sm font-semibold hover:text-primary transition-colors" href="#about">
-                About
-              </a>
-              <a
-                className="text-sm font-semibold hover:text-primary transition-colors border-l border-primary/20 pl-8"
-                href={siteConfig.deployCta.href}
-              >
-                Contact
-              </a>
-            </nav>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-            </div>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main className="mx-auto w-full max-w-[1200px] px-6 py-12">
           {/* Hero Section */}
@@ -46,17 +17,7 @@ export default function HomePage() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
             </div>
             <div className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-12 md:gap-16">
-              <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-xl shrink-0 order-2 md:order-1">
-                <Image
-                  src="/mitchell-bozentka.png"
-                  alt="Mitchell Bozentka"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 12rem, (max-width: 1024px) 16rem, 18rem"
-                  priority
-                />
-              </div>
-              <div className="flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-2 flex-1">
+              <div className="flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-1 flex-1">
                 <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium mb-4 tracking-tight text-slate-900 dark:text-slate-100">
                   Mitchell Bozentka
                 </h1>
@@ -71,12 +32,24 @@ export default function HomePage() {
                     Get in Touch
                   </Link>
                   <a
-                    href="#projects"
+                    href={siteConfig.scheduleExternalHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="min-w-[200px] border-2 border-primary/20 h-14 px-8 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all flex items-center justify-center text-slate-900 dark:text-slate-100"
                   >
-                    View Portfolio
+                    Schedule
                   </a>
                 </div>
+              </div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-xl shrink-0 order-2 md:order-2">
+                <Image
+                  src="/mitchell-bozentka.png"
+                  alt="Mitchell Bozentka"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 12rem, (max-width: 1024px) 16rem, 18rem"
+                  priority
+                />
               </div>
             </div>
             <a
@@ -175,6 +148,25 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Named writings → Blog */}
+          <section className="py-20 px-6" id="writings">
+            <div className="max-w-4xl mx-auto text-center">
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
+                Named writings
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 mb-8">
+                Essays, notes, and longer-form thoughts.
+              </h2>
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center gap-2 min-w-[200px] bg-primary text-white h-14 px-8 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/20 transition-all"
+              >
+                Read the blog
+                <ArrowRight className="size-5" />
+              </Link>
+            </div>
+          </section>
+
           {/* Select Projects */}
           <section className="py-20" id="select-projects">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
@@ -246,32 +238,6 @@ export default function HomePage() {
                 <p className="text-slate-500 dark:text-slate-400 text-sm">
                   PGA Golf Professional & Independent Developer
                 </p>
-              </div>
-              <div className="flex gap-8">
-                <a
-                  href="https://x.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors uppercase tracking-[0.2em] text-xs font-bold"
-                >
-                  Twitter
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors uppercase tracking-[0.2em] text-xs font-bold"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors uppercase tracking-[0.2em] text-xs font-bold"
-                >
-                  Instagram
-                </a>
               </div>
               <p className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-widest">
                 © {new Date().getFullYear()} MB. All Rights Reserved.

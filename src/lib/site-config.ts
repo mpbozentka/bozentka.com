@@ -8,12 +8,11 @@ export const siteConfig = {
     { label: "Brand", href: "/branding" },
   ],
   scheduleHref: "/schedule",
-  scheduleEmbedSrc:
-    "https://calendar.google.com/calendar/appointments/AcZssZ1wrWc2kovHxpzVnEe48c354w0BnjPfXdJBbL4=?gv=true",
-  scheduleExternalHref: "https://calendar.app.google/SLPFWi8bM1uaCVR86",
+  scheduleEmbedSrc: "https://calendar.app.google/81nEEYD2Nbj17b369",
+  scheduleExternalHref: "https://calendar.app.google/81nEEYD2Nbj17b369",
   deployCta: {
     label: "Contact",
-    href: "mailto:mboz7@proton.me",
+    href: "mailto:mitchell.bozentka@pga.com",
   },
   bio: {
     fullBioHref: "/bio",
