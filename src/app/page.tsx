@@ -71,7 +71,7 @@ export default function HomePage() {
                   Mitchell Bozentka
                 </h1>
                 <p className="text-base md:text-xl font-light tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-10">
-                  PGA Professional & Sovereign Steward
+                  PGA Professional & Independent Developer
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
                   <Link
@@ -204,7 +204,7 @@ export default function HomePage() {
                     <Sparkles className="size-5 text-slate-400 group-hover:text-primary transition-colors" />
                   </div>
                   <h6 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-                    The Sovereign Steward Mindset
+                    The Independent Developer Mindset
                   </h6>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                     Building personal infrastructure that allows for true

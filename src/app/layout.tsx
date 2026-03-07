@@ -15,9 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Mitchell Bozentka | PGA Professional & Sovereign Steward",
+  title: "Mitchell Bozentka | PGA Professional & Independent Developer",
   description:
-    "PGA Professional & Sovereign Steward. Empowering independent minds through Personal Agency and custom software solutions.",
+    "PGA Professional & Independent Developer. Empowering independent minds through Personal Agency and custom software solutions.",
 };
 
 export default function RootLayout({
