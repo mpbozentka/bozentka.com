@@ -50,6 +50,10 @@ export const siteConfig = {
       screenshotUrl: "/screenshots/unspent.png",
     },
   ],
+  newsletter: {
+    /** Get this from Beehiiv: Audience > Subscribe forms > Create/form > Get embed code — use the form ID from the iframe src. */
+    beehiivFormId: "a4dcbbb1-daf0-47a1-bdab-d736425783f0",
+  },
   nostr: {
     globalFeedHref: "https://njump.me",
   },

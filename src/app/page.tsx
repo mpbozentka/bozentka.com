@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { SiteHeader } from "@/components/site-header";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export default function HomePage() {
   return (
@@ -164,6 +165,12 @@ export default function HomePage() {
                 Read the blog
                 <ArrowRight className="size-5" />
               </Link>
+              <div className="mt-12 flex justify-center">
+                <NewsletterSignup
+                  formId={siteConfig.newsletter.beehiivFormId}
+                  className="w-full max-w-md"
+                />
+              </div>
             </div>
           </section>
 
