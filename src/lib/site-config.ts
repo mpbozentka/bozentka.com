@@ -67,6 +67,15 @@ export const siteConfig = {
       launchHref: "https://github.com/mpbozentka",
       screenshotUrl: "/screenshots/bitcoin-standard-financial-model.png",
     },
+    {
+      id: "fitting-reference",
+      name: "Fitting Reference",
+      description:
+        "2025–2026 season golf club fitting reference covering Drivers, Irons, and Wedges across Titleist, TaylorMade, Callaway, and PING.",
+      icon: "book",
+      launchHref: "https://fitting-reference.vercel.app",
+      screenshotUrl: "/screenshots/fitting-reference.png",
+    },
   ],
   newsletter: {
     /** Get this from Beehiiv: Audience > Subscribe forms > Create/form > Get embed code — use the form ID from the iframe src. */
