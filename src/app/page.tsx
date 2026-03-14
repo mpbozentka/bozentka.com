@@ -88,8 +88,6 @@ export default function HomePage() {
               </div>
               <Link
                 href={siteConfig.vercelProjectsHref}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-primary font-bold flex items-center gap-2 group w-fit"
               >
                 View all projects

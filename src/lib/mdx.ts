@@ -4,6 +4,16 @@ import matter from "gray-matter";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
+/** Format an ISO date string (e.g. "2026-03-14") as "March 14, 2026". */
+export function formatDate(iso: string): string {
+  const date = new Date(`${iso}T00:00:00`);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export interface PostMeta {
   title: string;
   date: string;

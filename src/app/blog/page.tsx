@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPosts } from "@/lib/mdx";
+import { getPosts, formatDate } from "@/lib/mdx";
 import { SiteHeader } from "@/components/site-header";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { siteConfig } from "@/lib/site-config";
@@ -36,7 +36,7 @@ export default function BlogPage() {
                   dateTime={post.date}
                   className="text-sm text-slate-500 dark:text-slate-400 block mb-2"
                 >
-                  {post.date}
+                  {formatDate(post.date)}
                 </time>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   {post.description}

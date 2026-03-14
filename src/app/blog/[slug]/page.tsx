@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import { getPosts, getPostBySlug } from "@/lib/mdx";
+import { getPosts, getPostBySlug, formatDate } from "@/lib/mdx";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 
@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             dateTime={post.date}
             className="text-slate-500 dark:text-slate-400 text-sm"
           >
-            {post.date}
+            {formatDate(post.date)}
           </time>
         </header>
         <div className="prose prose-slate lg:prose-lg mx-auto dark:prose-invert">

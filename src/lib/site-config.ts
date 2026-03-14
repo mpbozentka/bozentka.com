@@ -20,8 +20,8 @@ export const siteConfig = {
     launchHref: "https://swingstr.vercel.app",
     imageUrl: "/swingstr.png",
   },
-  vercelProjectsHref: "https://vercel.com/mitch-bozentkas-projects",
-  githubReposHref: "https://github.com",
+  vercelProjectsHref: "/projects",
+  githubReposHref: "https://github.com/mpbozentka",
   projects: [
     {
       id: "longhorn-ledger",
@@ -48,6 +48,24 @@ export const siteConfig = {
       icon: "trending",
       launchHref: "https://unspent-eta.vercel.app",
       screenshotUrl: "/screenshots/unspent.png",
+    },
+    {
+      id: "bitcoin-retirement-planner",
+      name: "Bitcoin Retirement Planner",
+      description:
+        "Model your path to retirement on a Bitcoin standard with DCA strategies, declining-CAGR growth curves, and multiple withdrawal approaches.",
+      icon: "calculator",
+      launchHref: "https://github.com/mpbozentka",
+      screenshotUrl: "/screenshots/bitcoin-retirement-planner.png",
+    },
+    {
+      id: "bitcoin-standard-financial-model",
+      name: "Bitcoin Standard Financial Model",
+      description:
+        "Monthly DCA simulator with real Strike fee tiers, bull/neutral/bear scenario modeling, and detailed cost-basis tracking.",
+      icon: "chart",
+      launchHref: "https://github.com/mpbozentka",
+      screenshotUrl: "/screenshots/bitcoin-standard-financial-model.png",
     },
   ],
   newsletter: {
