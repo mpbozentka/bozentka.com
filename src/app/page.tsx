@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { SiteHeader } from "@/components/site-header";
 import { NewsletterSignup } from "@/components/newsletter-signup";
+import { ContactForm } from "@/components/contact-form";
 
 export default function HomePage() {
   return (
@@ -23,15 +24,15 @@ export default function HomePage() {
                   Mitchell Bozentka
                 </h1>
                 <p className="text-base md:text-xl font-light tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-10">
-                  PGA Golf Professional & Independent Developer
+                  I Build AI-Powered Business Systems
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
-                  <Link
-                    href={siteConfig.deployCta.href}
+                  <a
+                    href="#contact"
                     className="min-w-[200px] bg-primary text-white h-14 px-8 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center"
                   >
                     Get in Touch
-                  </Link>
+                  </a>
                   <a
                     href={siteConfig.scheduleExternalHref}
                     target="_blank"
@@ -230,6 +231,21 @@ export default function HomePage() {
                   </article>
                 );
               })}
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section className="py-20 px-6" id="contact">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
+                  Get in Touch
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100">
+                  Let&apos;s work together.
+                </h2>
+              </div>
+              <ContactForm />
             </div>
           </section>
 
