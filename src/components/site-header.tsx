@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Sunrise } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
@@ -23,29 +22,9 @@ export function SiteHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link className="text-sm font-semibold hover:text-primary transition-colors" href="/blog">
-            Writing
-          </Link>
-          <Link className="text-sm font-semibold hover:text-primary transition-colors" href="/projects">
-            Projects
-          </Link>
-          <a
-            className="text-sm font-semibold hover:text-primary transition-colors"
-            href={siteConfig.scheduleExternalHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Schedule
-          </a>
-          <Link className="text-sm font-semibold hover:text-primary transition-colors" href="/bio">
+          <Link className="text-sm font-semibold hover:text-primary transition-colors" href="/about">
             About
           </Link>
-          <a
-            className="text-sm font-semibold hover:text-primary transition-colors border-l border-primary/20 pl-8"
-            href={siteConfig.deployCta.href}
-          >
-            Contact
-          </a>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -67,41 +46,11 @@ export function SiteHeader() {
           <div className="flex flex-col px-6 py-4 gap-4">
             <Link
               className="text-sm font-semibold hover:text-primary transition-colors py-2"
-              href="/blog"
-              onClick={() => setMobileOpen(false)}
-            >
-              Writing
-            </Link>
-            <Link
-              className="text-sm font-semibold hover:text-primary transition-colors py-2"
-              href="/projects"
-              onClick={() => setMobileOpen(false)}
-            >
-              Projects
-            </Link>
-            <a
-              className="text-sm font-semibold hover:text-primary transition-colors py-2"
-              href={siteConfig.scheduleExternalHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-            >
-              Schedule
-            </a>
-            <Link
-              className="text-sm font-semibold hover:text-primary transition-colors py-2"
-              href="/bio"
+              href="/about"
               onClick={() => setMobileOpen(false)}
             >
               About
             </Link>
-            <a
-              className="text-sm font-semibold hover:text-primary transition-colors py-2 border-t border-primary/10 pt-4"
-              href={siteConfig.deployCta.href}
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
-            </a>
           </div>
         </nav>
       )}
